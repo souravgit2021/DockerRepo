@@ -1,0 +1,7 @@
+FROM centos:7
+LABEL "Release 0.0.1 Beta"
+LABEL maintainer "Sourav Biswas"
+RUN yum update -y && yum upgrade -y
+RUN yum install httpd -y
+RUN echo "<h1> Hellow Sourav Httpd Creation </h1>" > /var/www/html/index.html
+CMD  [ "/usr/sbin/httpd", "-D", "FOREGROUND"]
